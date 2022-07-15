@@ -53,4 +53,4 @@ deploy-dev:
 	cp bin/local/.env.local .env
 	cp bin/local/docker-compose.yml.local docker-compose.yml
 	cp bin/local/Dockerfile.local Dockerfile
-	make deploy h=10.2.11.69 p=22 u=luandt dir=/home/luandt/mnt2/rm-ecommerce/rm-ecommerce-api
+	make deploy h=10.2.11.69 p=22 u=luandt dir=/home/luandt/mnt2/base-nestjs/base-nestjs-api

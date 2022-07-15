@@ -1,7 +1,7 @@
 {
-  "name": "rm-ecommerce-be",
+  "name": "base-nestjs-be",
   "version": "0.0.1",
-  "description": "rm-ecommerce-be",
+  "description": "base-nestjs-be",
   "author": "Sotatek-ThanhNguyen5",
   "private": true,
   "license": "UNLICENSED",

@@ -11,8 +11,8 @@ async function bootstrap() {
   useContainer(app.select(AppModule), { fallbackOnErrors: true });
 
   const documentApiConfig = new DocumentBuilder()
-    .setTitle('RM Ecommerce API')
-    .setDescription('The RM Ecommerce service API documents')
+    .setTitle('Base Nestjs API')
+    .setDescription('The Base Nestjs service API documents')
     .setVersion('0.0.1')
     .addBearerAuth()
     .build();

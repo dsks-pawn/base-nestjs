@@ -1,8 +1,8 @@
 version: '3.8'
 services:
   back:
-    container_name: rm_ecommerce_be
-    image: rm_ecommerce_api
+    container_name: base_nestjs_be
+    image: base_nestjs_api
     build: .
     ports:
       - "8084:3000"
@@ -21,7 +21,7 @@ services:
       - SYS_NICE
     restart: always
     environment:
-      - MYSQL_DATABASE=rm_ecommerce
+      - MYSQL_DATABASE=base_nestjs
       - MYSQL_ROOT_PASSWORD=1
     ports:
       - '3306:3306'
@@ -38,7 +38,7 @@ services:
 networks:
   default:
     external:
-      name: rm-ecommerce-common-network
+      name: base-nestjs-common-network
 volumes:
   db:
     driver: local

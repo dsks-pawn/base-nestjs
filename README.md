@@ -1,8 +1,8 @@
-# RM-Ecommerce-be
+# base-nestjs-be
 
 ## Description
 
-This is project folder of RM Ecommerce API
+This is project folder of Base Nestjs API
 
 If you running docker in localhost:
 Domain
@@ -17,11 +17,11 @@ Domain
 cp bin/local/.env.example .env
 cp bin/local/docker-compose.yml.local docker-compose.yml
 cp bin/local/Dockerfile.local Dockerfile
-docker network create rm-ecommerce-common-network
+docker network create base-nestjs-common-network
 docker-compose up -d --build
 
 # install node_modules inside docker
-docker exec -it rm_ecommerce_be bash
+docker exec -it base_nestjs_be bash
 npm i
 npm run build
 npm run migration:run
@@ -33,7 +33,7 @@ npm run seed:run
 
 ```bash
 # connect to docker
-docker exec -it rm_ecommerce_be bash
+docker exec -it base_nestjs_be bash
 
 # development
 npm run start

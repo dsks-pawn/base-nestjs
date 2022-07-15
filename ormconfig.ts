@@ -9,7 +9,7 @@ module.exports = {
   port: parseInt(process.env.DB_PORT, 10) || 3308,
   username: process.env.DB_USERNAME || 'root',
   password: process.env.DB_PASSWORD || '1',
-  database: process.env.DB_DATABASE || 'rm_ecommerce',
+  database: process.env.DB_DATABASE || 'base_nestjs',
   entities: ['dist/**/*.entity{ .ts,.js}'],
   subscribers: ['dist/**/*.subscriber{ .ts,.js}'],
   synchronize: false,
