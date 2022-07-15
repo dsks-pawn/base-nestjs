@@ -1,0 +1,22 @@
+doctype(html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd")
+html(lang='en' xmlns="http://www.w3.org/1999/xhtml")
+    head
+        title Mailing registration verification
+        style
+            include mail-template.css
+    body
+        div(class='header')
+            p
+                div(class='S')
+                    span S
+            p(class='RmEcommerce') RmEcommerce
+        div(class='content')
+            p(class='test') Hi #{email}
+            p(class='message') Congratulations, your user sign-up completed.
+            p Time: #{date}
+            p Please click to verify your account:
+            p
+                a(href=authentication_url) #{authentication_url}
+            hr
+            p For further questions, please contact:
+                span(class='blue') #{mail_support}

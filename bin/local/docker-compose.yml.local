@@ -1,0 +1,45 @@
+version: '3.8'
+services:
+  back:
+    container_name: rm_ecommerce_be
+    image: rm_ecommerce_api
+    build: .
+    ports:
+      - "8084:3000"
+    volumes:
+      - .:/app/api/
+    stdin_open: true
+    tty: true
+    depends_on:
+      - db
+      - redis
+    environment:
+      HOST: 0.0.0.0
+  db:
+    image: mysql:8.0
+    cap_add:
+      - SYS_NICE
+    restart: always
+    environment:
+      - MYSQL_DATABASE=rm_ecommerce
+      - MYSQL_ROOT_PASSWORD=1
+    ports:
+      - '3306:3306'
+    volumes:
+      - db:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+  redis:
+    image: "redis:alpine"
+    command: redis-server
+    volumes:
+      - redis-store:/var/lib/redis
+    ports:
+      - "6379:6379"
+networks:
+  default:
+    external:
+      name: rm-ecommerce-common-network
+volumes:
+  db:
+    driver: local
+  redis-store:
